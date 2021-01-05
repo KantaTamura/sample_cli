@@ -2,15 +2,40 @@
 
 ## build setup
 ```shell
-> cargo run
-["target\debug\sample-cli.exe"]
+> rustup run nightly cargo run
+No file specified.
+Is verbosity specified?: false
 
-> cargo run -- 1 a xyz 2.0
-["target\debug\sample-cli.exe", "1", "a", "xyz", "2.0"]
+> rustup run nightly cargo run -- input.txt
+File specified: input.txt
+Is verbosity specified?: false
+
+> rustup run nightly cargo run -- -v input.txt
+File specified: input.txt
+Is verbosity specified?: true
+
+> rustup run nightly cargo run -- -V
+My RPN program 1.0.0
+
+> rustup run nightly cargo run -- -h
+My RPN program 1.0.0
+Kanta Tamura
+Super awesome sample RPN calculator
+
+USAGE:
+    sample-cli.exe [FLAGS] [FILE]
+
+ARGS:
+    <FILE>    Formulas written in RPN
+
+FLAGS:
+    -h, --help       Prints help information
+    -v, --verbose    Sets the level of verbosity
+    -V, --version    Prints version information
 ```
 
 ## current status
-Store command line arguments in vec and output.
+Use Clap to handle command line arguments.
 
 ## purpose
 An application that calculates formulas in RPN(Reverse-Polish-Notation).
