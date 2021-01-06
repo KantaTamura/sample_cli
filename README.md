@@ -2,17 +2,18 @@
 
 ## build setup
 ```shell
-> rustup run nightly cargo run
-No file specified.
-Is verbosity specified?: false
+> cat input.txt
+1 1 +
+1 2 + 3 4 + *
+1000 1000 *
 
 > rustup run nightly cargo run -- input.txt
-File specified: input.txt
-Is verbosity specified?: false
+1 1 +
+1 2 + 3 4 + *
+1000 1000 *
 
-> rustup run nightly cargo run -- -v input.txt
-File specified: input.txt
-Is verbosity specified?: true
+> rustup run nightly cargo run
+No file is specified
 
 > rustup run nightly cargo run -- -V
 My RPN program 1.0.0
