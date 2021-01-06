@@ -13,7 +13,8 @@
 1000 1000 *
 
 > rustup run nightly cargo run
-No file is specified
+1 1 +  # 入力
+1 1 +
 
 > rustup run nightly cargo run -- -V
 My RPN program 1.0.0
