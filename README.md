@@ -2,19 +2,27 @@
 
 ## build setup
 ```shell
+> rustup run nightly cargo run
+1 1 +  # 入力
+2
+1 1 1 +  # 入力
+3
+
 > cat input.txt
 1 1 +
-1 2 + 3 4 + *
 1000 1000 *
 
 > rustup run nightly cargo run -- input.txt
-1 1 +
-1 2 + 3 4 + *
-1000 1000 *
+2
+1000000
 
-> rustup run nightly cargo run
+
+> rustup run nightly cargo run -- -v
 1 1 +  # 入力
-1 1 +
+["+", "1"] [1]
+["+"] [1, 1]
+[] [2]
+2
 
 > rustup run nightly cargo run -- -V
 My RPN program 1.0.0
