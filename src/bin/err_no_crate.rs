@@ -3,9 +3,15 @@ enum MyError {
     Num(std::num::ParseIntError),
 }
 
+impl From<std::io::Error> for MyError {
+    fn from(cause: std::io::Error) -> Self {
+        Self::Io(cause)
+    }
+}
+
 fn get_int_from_file() -> Result<i32, MyError> {
     let path = "number.txt";
-    let num_str = std::fs::read_to_string(path).map_err(|e| MyError::Io(e))?;
+    let num_str = std::fs::read_to_string(path).map_err(MyError::from)?;
 
     num_str
         .trim()
