@@ -25,3 +25,27 @@ thread 'main' panicked at 'failed to parse string to a number.: ParseIntError { 
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 error: process did not exit successfully: `target\debug\err_panic.exe` (exit code: 101)
 ```
+
+## err_no_crate.rs
+
+added error handling to err_panic.rs
+
+```shell
+> echo 42 > number.txt  # write numbers to a text file
+
+> cat number.txt
+42
+
+> rustup run nightly cargo run --bin err_panic
+84
+
+> rm number.txt  # delete text file
+
+> rustup run nightly cargo run --bin err_panic
+I/O Error: 指定されたファイルが見つかりません。 (os error 2)
+
+> echo hoge > number.txt  # write non numeric values to a text file
+
+> rustup run nightly cargo run --bin err_panic
+Parse Error: invalid digit found in string
+```
