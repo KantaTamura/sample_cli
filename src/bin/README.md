@@ -55,15 +55,30 @@ Parse Error: invalid digit found in string
 error handling with anyhow
 
 ```shell
-> echo 42 > number.txt  # write numbers to a text file
+> echo 12345 > number.txt
+
+> rustup run nightly cargo run --bin err_anyhow
+24690
+
+> echo 1000000000 >  number.txt
+
+> rustup run nightly cargo run --bin err_anyhow
+"it may be too large number"
+
+> echo 42 > number.txt
 
 > cat number.txt
 42
 
 > rustup run nightly cargo run --bin err_anyhow
-84
+"first digit is not 1"
 
-> rm number.txt  # delete text file
+> echo hoge > number.txt
+
+> rustup run nightly cargo run --bin err_anyhow
+"first digit is not 1"
+
+> rm number.txt
 
 > rustup run nightly cargo run --bin err_anyhow
 Error {
@@ -72,16 +87,6 @@ Error {
         code: 2,
         kind: NotFound,
         message: "指定されたファイルが見つかりません。",
-    },
-}
-
-> echo hoge > number.txt  # write non numeric values to a text file
-
-> rustup run nightly cargo run --bin err_anyhow
-Error {
-    context: "failed to parse string",
-    source: ParseIntError {
-        kind: InvalidDigit,
     },
 }
 ```
