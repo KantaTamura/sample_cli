@@ -66,10 +66,22 @@ error handling with anyhow
 > rm number.txt  # delete text file
 
 > rustup run nightly cargo run --bin err_anyhow
-I/O Error: 指定されたファイルが見つかりません。 (os error 2)
+Error {
+    context: "failed to read string from number.txt",
+    source: Os {
+        code: 2,
+        kind: NotFound,
+        message: "指定されたファイルが見つかりません。",
+    },
+}
 
 > echo hoge > number.txt  # write non numeric values to a text file
 
 > rustup run nightly cargo run --bin err_anyhow
-Parse Error: invalid digit found in string
+Error {
+    context: "failed to parse string",
+    source: ParseIntError {
+        kind: InvalidDigit,
+    },
+}
 ```
