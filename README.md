@@ -2,7 +2,9 @@
 
 ## build setup
 ```shell
-> rustup run nightly cargo run
+> rustup run nightly cargo install --path .
+
+> rpncalc
 1 1 +  # 入力
 2
 1 1 1 +  # 入力
@@ -12,22 +14,22 @@
 1 1 +
 1000 1000 *
 
-> rustup run nightly cargo run -- input.txt
+> rpncalc -- input.txt
 2
 1000000
 
 
-> rustup run nightly cargo run -- -v
+> rpncalc -- -v
 1 1 +  # 入力
 ["+", "1"] [1]
 ["+"] [1, 1]
 [] [2]
 2
 
-> rustup run nightly cargo run -- -V
+> rpncalc -- -V
 My RPN program 1.0.0
 
-> rustup run nightly cargo run -- -h
+> rpncalc -- -h
 My RPN program 1.0.0
 Kanta Tamura
 Super awesome sample RPN calculator

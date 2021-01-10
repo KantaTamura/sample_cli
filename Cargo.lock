@@ -139,7 +139,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sample-cli"
+name = "rpncalc"
 version = "0.1.0"
 dependencies = [
  "anyhow 1.0.37 (registry+https://github.com/rust-lang/crates.io-index)",
