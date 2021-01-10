@@ -144,6 +144,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow 1.0.37 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 3.0.0-beta.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "thiserror 1.0.23 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -175,6 +176,24 @@ version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "unicode-width 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "thiserror-impl 1.0.23 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "proc-macro2 1.0.24 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quote 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "syn 1.0.57 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -251,6 +270,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum syn 1.0.57 (registry+https://github.com/rust-lang/crates.io-index)" = "4211ce9909eb971f111059df92c45640aad50a619cf55cd76476be803c4c68e6"
 "checksum termcolor 1.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "2dfed899f0eb03f32ee8c6a0aabdb8a7949659e3466561fc0adf54e26d88c5f4"
 "checksum textwrap 0.12.1 (registry+https://github.com/rust-lang/crates.io-index)" = "203008d98caf094106cfaba70acfed15e18ed3ddb7d94e49baec153a2b462789"
+"checksum thiserror 1.0.23 (registry+https://github.com/rust-lang/crates.io-index)" = "76cc616c6abf8c8928e2fdcc0dbfab37175edd8fb49a4641066ad1364fdab146"
+"checksum thiserror-impl 1.0.23 (registry+https://github.com/rust-lang/crates.io-index)" = "9be73a2caec27583d0046ef3796c3794f868a5bc813db689eed00c7631275cd1"
 "checksum unicode-segmentation 1.7.1 (registry+https://github.com/rust-lang/crates.io-index)" = "bb0d2e7be6ae3a5fa87eed5fb451aff96f2573d2694942e40543ae0bbe19c796"
 "checksum unicode-width 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)" = "9337591893a19b88d8d87f2cec1e73fad5cdfd10e5a6f349f498ad6ea2ffb1e3"
 "checksum unicode-xid 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "f7fe0bb3479651439c9112f72b6c505038574c9fbb575ed1bf3b797fa39dd564"

@@ -90,3 +90,33 @@ Error {
     },
 }
 ```
+
+## err_thiserror.rs
+
+error handling with thiserror
+
+```shell
+> echo 42 > number.txt
+
+> cat number.txt
+42
+
+> rustup run nightly cargo run --bin err_panic
+84
+
+> rm number.txt
+
+> rustup run nightly cargo run --bin err_panic
+ReadError(
+    "number.txt",
+)
+
+> echo hoge > number.txt
+
+> rustup run nightly cargo run --bin err_panic
+ParseError(
+    ParseIntError {
+        kind: InvalidDigit,
+    },
+)
+```
