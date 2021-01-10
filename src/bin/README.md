@@ -49,3 +49,27 @@ I/O Error: 指定されたファイルが見つかりません。 (os error 2)
 > rustup run nightly cargo run --bin err_panic
 Parse Error: invalid digit found in string
 ```
+
+## err_anyhow.rs
+
+error handling with anyhow
+
+```shell
+> echo 42 > number.txt  # write numbers to a text file
+
+> cat number.txt
+42
+
+> rustup run nightly cargo run --bin err_anyhow
+84
+
+> rm number.txt  # delete text file
+
+> rustup run nightly cargo run --bin err_anyhow
+I/O Error: 指定されたファイルが見つかりません。 (os error 2)
+
+> echo hoge > number.txt  # write non numeric values to a text file
+
+> rustup run nightly cargo run --bin err_anyhow
+Parse Error: invalid digit found in string
+```
